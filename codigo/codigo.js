@@ -1,6 +1,6 @@
 //VARIABLES-CONSTANTES GLOBALES
 let productoA = [];
-const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
 let productoL
 
 
@@ -108,7 +108,7 @@ function capturarP(e) {
 
 
 //SIMULADOR DE CARRITO 
-let carritoDeCompras = [];
+let carritoDeCompras = JSON.parse(localStorage.getItem("carrito")) || [];
 
 function agregarAlCarrito(productoNuevo) {
     const findCarrito = carritoDeCompras.find(e => e.id === productoNuevo.id)
@@ -129,8 +129,9 @@ function agregarAlCarrito(productoNuevo) {
         confirmButtonColor: '#E8D637',
     });
 
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    tablaDelCarrito()
+
+    tablaDelCarrito();
+    localStorage.setItem("carrito", JSON.stringify(carritoDeCompras));
 
 };
 //AGREGAR LOS PRODUCTOS AL DOM
