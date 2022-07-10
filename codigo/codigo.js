@@ -108,7 +108,8 @@ function capturarP(e) {
 
 
 //SIMULADOR DE CARRITO 
-let carritoDeCompras = JSON.parse(localStorage.getItem("carritoDeCompras")) || [];
+let carritoDeCompras = [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 function agregarAlCarrito(productoNuevo) {
     const findCarrito = carritoDeCompras.find(e => e.id === productoNuevo.id)
@@ -118,6 +119,8 @@ function agregarAlCarrito(productoNuevo) {
         const index = carritoDeCompras.indexOf(findCarrito)
         carritoDeCompras[index].cantidad++
     }
+    localStorage.setItem("carrito", JSON.stringify(carritoDeCompras));
+    tablaDelCarrito();
     console.log(...carritoDeCompras);
     Swal.fire({
         title: productoNuevo.nombre,
@@ -128,9 +131,6 @@ function agregarAlCarrito(productoNuevo) {
         imageAlt: 'articulo',
         confirmButtonColor: '#E8D637',
     });
-
-    localStorage.setItem("carritoDeCompras", JSON.stringify(carritoDeCompras));
-    tablaDelCarrito();
 
 
 };
