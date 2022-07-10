@@ -1,6 +1,7 @@
     body {
         font-family: 'Source Serif 4', serif;
     }
+    /*CSS para barra nav*/
     
     .logoCuervo img {
         width: 100px;
@@ -175,52 +176,6 @@
         cursor: pointer;
         color: black;
     }
-    /* .modalEnvio {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: black;
-        display: flex;
-        opacity: 0;
-        pointer-events: none;
-    }
-    
-    .modalContainer {
-        width: 90%;
-        max-width: 600px;
-        max-height: 90%;
-        margin: auto;
-        background-color: white;
-        border-radius: 6px;
-        padding: 3em 2.5em;
-        display: grid;
-        gap: 1em;
-        place-items: center;
-        grid-auto-columns: 100%;
-    }
-    
-    .cerrarModal {
-        text-decoration: none;
-        color: #E8D637;
-        background-color: black;
-        padding: 1em 3em;
-        border: 1px solid;
-        border-radius: 6px;
-        display: inline-block;
-        font-weight: 300;
-        transition: background-color 0.3s;
-    }
-    
-    .cerrarModal:hover {
-        color: black;
-        background-color: #E8D637;
-    } */
-    /* .mostrarModal {
-        opacity: 1;
-        pointer-events: unset;
-    } */
     
     .finCompra {
         text-decoration: none;
@@ -235,4 +190,16 @@
     
     .finCompra:hover {
         color: #E8D637;
+    }
+    /*CSS para barra copyright*/
+    
+    .copy {
+        background-color: gray;
+        color: #E8D637;
+        margin: 0;
+        padding-top: 8px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-weight: bold;
     }
