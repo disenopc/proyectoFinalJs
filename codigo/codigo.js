@@ -108,7 +108,7 @@ function capturarP(e) {
 
 
 //SIMULADOR DE CARRITO 
-let carritoDeCompras = JSON.parse(localStorage.getItem("carrito")) || [];
+let carritoDeCompras = JSON.parse(localStorage.getItem("carritoDeCompras")) || [];
 
 function agregarAlCarrito(productoNuevo) {
     const findCarrito = carritoDeCompras.find(e => e.id === productoNuevo.id)
@@ -129,9 +129,9 @@ function agregarAlCarrito(productoNuevo) {
         confirmButtonColor: '#E8D637',
     });
 
-
+    localStorage.setItem("carritoDeCompras", JSON.stringify(carritoDeCompras));
     tablaDelCarrito();
-    localStorage.setItem("carrito", JSON.stringify(carritoDeCompras));
+
 
 };
 //AGREGAR LOS PRODUCTOS AL DOM
@@ -257,25 +257,6 @@ closeCart.onclick = () => {
     cart.classList.add("oculto");
 };
 
-//ABRIR Y CERRAR MODAL
-// let envioADomicilio = document.querySelector(".envioAdomicilio");
-// let modal = document.querySelector(".modalEnvio");
-// let cerrarElModal = document.querySelector(".cerrarModal");
-
-
-
-// if (envioADomicilio.checked) {
-//     envioADomicilio.addEventListener("click", (e) => {
-//         e.preventDefault();
-//         modal.classList.add("mostralModal");
-//     });
-// }
-// cerrarElModal.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     modal.classList.remove("mostralModal");
-// });
-
-
 
 //EVENTO BOTON FINALIZAR COMPRA
 let finDeLaCompra = document.querySelector(".finCompra");
@@ -287,7 +268,7 @@ finDeLaCompra.addEventListener("click", () => {
 });
 
 
-//LIMITE DE CANTIDAD
+
 
 
 
