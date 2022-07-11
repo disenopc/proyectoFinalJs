@@ -156,7 +156,7 @@ function tablaDelCarrito(productoNuevo) {
         carritoDeCompras.forEach(productoNuevo => {
             document.getElementById(`btnEliminar${ productoNuevo.id }`).addEventListener("click", function() {
                 eliminar(productoNuevo);
-                sumarTotal()
+
             });
         });
     //SUMAR CANTIDAD
@@ -206,28 +206,27 @@ function tablaDelCarrito(productoNuevo) {
     sumaCarrito.innerHTML = "$" + sumarProductos;
     totalF.appendChild(sumaCarrito);
 
+};
 
-    //RESTA CANTIDADES
-    const restar = (productoNuevo) => {
-            const findCarrito = carritoDeCompras.find(e => e.id === productoNuevo.id);
-            const index = carritoDeCompras.indexOf(findCarrito);
-            carritoDeCompras[index].cantidad--;
-            if (productoNuevo.cantidad <= 0) {
-                (productoNuevo.cantidad = 1);
-            }
-
-            tablaDelCarrito();
-        }
-        // SUMA CANTIDADES
-    const sumar = (productoNuevo) => {
-        const findCarrito = carritoDeCompras.find(e => e.id === productoNuevo.id);
-        const index = carritoDeCompras.indexOf(findCarrito);
-        carritoDeCompras[index].cantidad++;
-
-        tablaDelCarrito();
+//RESTA CANTIDADES
+const restar = (productoNuevo) => {
+    const findCarrito = carritoDeCompras.find(e => e.id === productoNuevo.id);
+    const index = carritoDeCompras.indexOf(findCarrito);
+    carritoDeCompras[index].cantidad--;
+    tablaDelCarrito();
+    if (productoNuevo.cantidad <= 0) {
+        (productoNuevo.cantidad = 1);
     }
+};
+// SUMA CANTIDADES
+const sumar = (productoNuevo) => {
+    const findCarrito = carritoDeCompras.find(e => e.id === productoNuevo.id);
+    const index = carritoDeCompras.indexOf(findCarrito);
+    carritoDeCompras[index].cantidad++;
+    tablaDelCarrito();
+};
 
-}
+
 const borrar = () => {
     carritoDeCompras = [];
     tablaDelCarrito();
