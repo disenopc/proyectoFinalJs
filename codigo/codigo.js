@@ -16,7 +16,7 @@ function productosRenderizados() {
             <img class="imgArray  card-img-top" src="${array.img}">
             <h3 class="item-title"> ${array.nombre} </h3>
             <p class="card-text"><strong>$${array.precio}</strong></p>
-            <button id="btn${array.id}" class=" add-cart"><i class='bx bx-shopping-bag' ></i></button>
+            <button id="btn${array.id}" class="add-cart"><i class='bx bx-shopping-bag' ></i></button>
             </div>
          </div>`
         card.appendChild(productoL);
@@ -132,8 +132,9 @@ function agregarAlCarrito(productoNuevo) {
         confirmButtonColor: '#E8D637',
     });
 
-
 };
+
+
 //AGREGAR LOS PRODUCTOS AL DOM
 function tablaDelCarrito(productoNuevo) {
     const tabla = document.getElementById("cuerpoTabla");
@@ -179,6 +180,7 @@ function tablaDelCarrito(productoNuevo) {
     borrarCarrito.innerHTML = `<button id="btnBorrarCarrito" class="botonBorrarCarro btn btn-dark"> Borrar carrito </button>`
     const btnBorrarCarrito = document.getElementById("btnBorrarCarrito");
 
+
     btnBorrarCarrito.addEventListener("click", () => {
         Swal.fire({
             title: 'Estás seguro que deseas eliminar el carrito?',
@@ -200,14 +202,13 @@ function tablaDelCarrito(productoNuevo) {
     });
 
     const totalF = document.getElementById("totalPrice");
-    totalF.innerHTML = ""
+    totalF.innerHTML = "";
     const sumaCarrito = document.createElement("div");
     const sumarProductos = carritoDeCompras.map(productoNuevo => productoNuevo.precio * productoNuevo.cantidad).reduce((prev, curr) => prev + curr, 0);
     sumaCarrito.innerHTML = "$" + sumarProductos;
     totalF.appendChild(sumaCarrito);
 
 };
-
 //RESTA CANTIDADES
 const restar = (productoNuevo) => {
     const findCarrito = carritoDeCompras.find(e => e.id === productoNuevo.id);
@@ -245,14 +246,15 @@ let closeCart = document.querySelector("#cerrarCarro");
 let cartIcon = document.querySelector("#cart-icon");
 let cart = document.querySelector(".cart");
 
+
 cartIcon.onclick = () => {
-    cart.classList.add("active");
+    cart.classList.add("activo");
     cart.classList.remove("oculto");
 
 };
 
 closeCart.onclick = () => {
-    cart.classList.remove("active");
+    cart.classList.remove("activo");
     cart.classList.add("oculto");
 };
 

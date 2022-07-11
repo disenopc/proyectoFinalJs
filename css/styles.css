@@ -80,7 +80,7 @@
         transition: .3s;
     }
     
-    .cart.active {
+    .cart.activo {
         width: 360px;
     }
     
