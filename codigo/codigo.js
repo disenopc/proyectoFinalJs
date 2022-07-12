@@ -109,7 +109,8 @@ function capturarP(e) {
 
 //SIMULADOR DE CARRITO 
 let carritoDeCompras = [];
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
 
 function agregarAlCarrito(productoNuevo) {
     const findCarrito = carritoDeCompras.find(e => e.id === productoNuevo.id)
@@ -119,9 +120,6 @@ function agregarAlCarrito(productoNuevo) {
         const index = carritoDeCompras.indexOf(findCarrito)
         carritoDeCompras[index].cantidad++
     }
-    localStorage.setItem("carrito", JSON.stringify(carritoDeCompras));
-    tablaDelCarrito();
-    console.log(...carritoDeCompras);
     Swal.fire({
         title: productoNuevo.nombre,
         text: "se agregó al carrito.",
@@ -132,6 +130,9 @@ function agregarAlCarrito(productoNuevo) {
         confirmButtonColor: '#E8D637',
     });
 
+    console.log(...carritoDeCompras);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    tablaDelCarrito();
 };
 
 
@@ -199,6 +200,7 @@ function tablaDelCarrito(productoNuevo) {
                 borrar();
             }
         })
+
     });
 
     const totalF = document.getElementById("totalPrice");
@@ -208,26 +210,26 @@ function tablaDelCarrito(productoNuevo) {
     sumaCarrito.innerHTML = "$" + sumarProductos;
     totalF.appendChild(sumaCarrito);
 
-};
-//RESTA CANTIDADES
-const restar = (productoNuevo) => {
-    const findCarrito = carritoDeCompras.find(e => e.id === productoNuevo.id);
-    const index = carritoDeCompras.indexOf(findCarrito);
-    carritoDeCompras[index].cantidad--;
-    tablaDelCarrito();
-    if (productoNuevo.cantidad <= 0) {
-        (productoNuevo.cantidad = 1);
-    }
-};
-// SUMA CANTIDADES
-const sumar = (productoNuevo) => {
-    const findCarrito = carritoDeCompras.find(e => e.id === productoNuevo.id);
-    const index = carritoDeCompras.indexOf(findCarrito);
-    carritoDeCompras[index].cantidad++;
-    tablaDelCarrito();
-};
 
-
+    //RESTA CANTIDADES
+    const restar = (productoNuevo) => {
+        const findCarrito = carritoDeCompras.find(e => e.id === productoNuevo.id);
+        const index = carritoDeCompras.indexOf(findCarrito);
+        carritoDeCompras[index].cantidad--;
+        tablaDelCarrito();
+        if (productoNuevo.cantidad <= 0) {
+            (productoNuevo.cantidad = 1);
+        }
+    };
+    // SUMA CANTIDADES
+    const sumar = (productoNuevo) => {
+        const findCarrito = carritoDeCompras.find(e => e.id === productoNuevo.id);
+        const index = carritoDeCompras.indexOf(findCarrito);
+        carritoDeCompras[index].cantidad++;
+        tablaDelCarrito();
+    };
+    localStorage.setItem("carrito", JSON.stringify(carritoDeCompras));
+};
 const borrar = () => {
     carritoDeCompras = [];
     tablaDelCarrito();
