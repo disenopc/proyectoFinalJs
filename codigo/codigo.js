@@ -1,9 +1,6 @@
-//VARIABLES-CONSTANTES GLOBALES
+//VARIABLES GLOBALES
 let productoA = [];
-
-let productoL
-
-
+let productoL;
 
 //RENDERIZAR PRODUCTOS
 function productosRenderizados() {
@@ -69,6 +66,14 @@ const botonEnviar = (e) => {
     console.log(listasuscriptores);
 
 };
+//PRESION DEL ENTER ANTES DE ESCRIBIR EMAIL
+function capturarP(e) {
+    ((e.which == 13) || (e.keycode == 13)) ? Swal.fire({
+        text: 'Ingrese un email válido y luego presione enviar',
+        confirmButtonColor: '#E8D637'
+    }): ""
+};
+
 
 class Suscriptor {
     constructor(email, id) {
@@ -98,18 +103,10 @@ class Suscriptores {
 
 const listasuscriptores = new Suscriptores();
 
-//PRESION DEL ENTER ANTES DE ESCRIBIR EMAIL
-function capturarP(e) {
-    ((e.which == 13) || (e.keycode == 13)) ? Swal.fire({
-        text: 'Ingrese un email válido y luego presione enviar',
-        confirmButtonColor: '#E8D637'
-    }): ""
-};
 
 
 //SIMULADOR DE CARRITO 
-let carritoDeCompras = [];
-const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+let carritoDeCompras = JSON.parse(localStorage.getItem('carrito')) || [];
 
 
 function agregarAlCarrito(productoNuevo) {
@@ -130,8 +127,8 @@ function agregarAlCarrito(productoNuevo) {
         confirmButtonColor: '#E8D637',
     });
 
-    console.log(...carritoDeCompras);
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    localStorage.setItem("carrito", JSON.stringify(carritoDeCompras));
     tablaDelCarrito();
 };
 
@@ -230,6 +227,8 @@ function tablaDelCarrito(productoNuevo) {
     };
     localStorage.setItem("carrito", JSON.stringify(carritoDeCompras));
 };
+
+console.log(carritoDeCompras);
 const borrar = () => {
     carritoDeCompras = [];
     tablaDelCarrito();
@@ -310,4 +309,3 @@ finDeLaCompra.addEventListener("click", () => {
 //     }
 
 //     localStorage.setItem("modo", modo);
-//
