@@ -66,13 +66,18 @@ const botonEnviar = (e) => {
     console.log(listasuscriptores);
 
 };
-//PRESION DEL ENTER ANTES DE ESCRIBIR EMAIL
-function capturarP(e) {
-    ((e.which == 13) || (e.keycode == 13)) ? Swal.fire({
-        text: 'Ingrese un email válido y luego presione enviar',
-        confirmButtonColor: '#E8D637'
-    }): ""
-};
+//VALIDA FORM EMAIL
+// const validation = new JustValidate("#form");
+// .addField('.email', [{
+//         rule: 'required',
+//         errorMessage: 'Email is required',
+//     },
+//     {
+//         rule: 'email',
+//         errorMessage: 'Email is invalid!',
+//     },
+// ]);
+
 
 
 class Suscriptor {
@@ -267,45 +272,5 @@ finDeLaCompra.addEventListener("click", () => {
         text: "Gracias por tu compra, estamos preparando tu pedido",
         confirmButtonColor: '#E8D637'
     });
-});
-
-
-
-
-
-
-
-//*******************************************************************CAMBIO DE COLOR BODY
-
-//Modo cuervo
-// let modo = localStorage.getItem("modo");
-// if (modo == null) {
-//     modo = "dark"
-// };
-// let menu = document.getElementById("menu");
-// let boton = document.getElementById("mode");
-// document.body.className = modo;
-// menu.className = "navbar navbar-expand-lg " + modo;
-// localStorage.setItem("modo", modo);
-
-// function blue() {
-//     document.body.className = "blue"
-//     menu.className = "navbar navbar-expand-lg blue";
-//     modo = "blue";
-//     boton.innerText = "Modo Cuervo";
-// }
-
-// function dark() {
-//     document.body.className = "dark";
-//     menu.className = "navbar navbar-expand-lg dark";
-//     modo = "dark";
-//     boton.innerText = "Modo Oscuro";
-// }
-//IF TERNARIO
-// boton.onclick = () => {
-//     {
-//         (modo == "dark") ? blue(): dark();
-//         console.log("El boton funciona");
-//     }
-
-//     localStorage.setItem("modo", modo);
+    borrar(carritoDeCompras);
+})
