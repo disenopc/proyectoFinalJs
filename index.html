@@ -43,6 +43,7 @@
         <h2 class="cart-title">Tu carrito:</h2>
         <table class="table">
             <tbody id="cuerpoTabla">
+
                 <i class='bx bx-x close-cart' id="cerrarCarro"> </i>
                 <!--productos agregados al carro-->
             </tbody>
@@ -73,7 +74,7 @@
         <div class="container pb-3 pt-3" style="width: 100;">
             <form id="form">
                 <label for="inputPassword6" class="col-form-label">Desea suscribirse al Newsletter?</label>
-                <input type="email" class="form-control mb-3 email" id="exampleFormControlInput1" placeholder="elcuervo@petshop.com">
+                <input type="email" class="form-control mb-3 email" id="exampleFormControlInput1" placeholder="elcuervo@petshop.com" onkeypress="ingresarUnEmailValido(event)">
                 <input type="submit" class="btn-check" id="btn-check-2-outlined form" checked autocomplete="off">
                 <label class="btn btn-outline-secondary " id="formulario" for="btn-check-2-outlined" value="enviar">Enviar</label><br>
             </form>

@@ -66,26 +66,9 @@ const botonEnviar = (e) => {
     console.log(listasuscriptores);
 
 };
+
 //VALIDA FORM EMAIL
-// const validation = new JustValidate("#form");
-// .addField('.email', [{
-//         rule: 'required',
-//         errorMessage: 'Email is required',
-//     },
-//     {
-//         rule: 'email',
-//         errorMessage: 'Email is invalid!',
-//     },
-// ]);
 
-
-
-class Suscriptor {
-    constructor(email, id) {
-        this.email = email;
-        this.id = id;
-    }
-};
 
 const createNewSuscriptor = (email) => {
     const id = listasuscriptores.generateId();
@@ -108,7 +91,19 @@ class Suscriptores {
 
 const listasuscriptores = new Suscriptores();
 
+//VALIDA FORM TECLA ENTER
 
+let mail = document.querySelector(".email");
+
+function ingresarUnEmailValido(e) {
+    if ((e.which == 13 || e.keycode == 13 && mail == "")) {
+        Swal({
+            type: 'error',
+            text: 'Ingrese un email válido y luego presione enviar',
+            timer: 3000
+        })
+    }
+};
 
 //SIMULADOR DE CARRITO 
 let carritoDeCompras = JSON.parse(localStorage.getItem('carrito')) || [];
