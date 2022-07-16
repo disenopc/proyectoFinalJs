@@ -155,7 +155,6 @@ function tablaDelCarrito(productoNuevo) {
                 </div>
             <i class='bx bx-trash cart-remove' id ="btnEliminar${productoNuevo.id}"></i>
             </div> 
-            
             <button class="finCompra"><a>Finalizar Compra</a></button>
             `;
 
