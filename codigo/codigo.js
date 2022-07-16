@@ -1,4 +1,4 @@
-//VARIABLES GLOBALES
+//VARIABLES 
 let productoA = [];
 let productoL;
 
@@ -8,7 +8,7 @@ function renderPro() {
     for (let array of productoA) {
         const productoL = document.createElement("div");
         productoL.innerHTML += `
-        <div class="card mb-3 item" style="width: 18rem;">
+        <div class="card mb-3" style="width: 18rem;">
           <div class="container card-body">
             <img class="imgArray  card-img-top" src="${array.img}">
             <h3 class="item-title"> ${array.nombre} </h3>

@@ -18,7 +18,7 @@
         "nombre": "Dogui",
         "categoria": "Alimento Balanceado",
         "precio": 1000,
-        "stock": 4,
+        "stock": 14,
         "img": "./images/dogui.png",
         "id": 3
     },
@@ -42,7 +42,7 @@
         "nombre": "Sabrositos Adulto",
         "categoria": "Alimento Balanceado",
         "precio": 1000,
-        "stock": 5,
+        "stock": 15,
         "img": "./images/sabrositosadulto.png",
         "id": 6
     },
@@ -50,7 +50,7 @@
         "nombre": "Jaspe Adulto",
         "categoria": "Alimento Balanceado",
         "precio": 1000,
-        "stock": 9,
+        "stock": 19,
         "img": "./images/jaspeadulto.png",
         "id": 7
     },
@@ -58,7 +58,7 @@
         "nombre": "Walt-Can Cachorro",
         "categoria": "Alimento Balanceado",
         "precio": 1000,
-        "stock": 5,
+        "stock": 15,
         "img": "./images/waltcancachorro.png",
         "id": 8
     },
@@ -66,7 +66,7 @@
         "nombre": "Jaspe Cachorro",
         "categoria": "Alimento Balanceado",
         "precio": 1000,
-        "stock": 6,
+        "stock": 16,
         "img": "./images/jaspecachorro.jpg",
         "id": 9
     },
@@ -74,7 +74,7 @@
         "nombre": "Dog-Chow Cachorro",
         "categoria": "Alimento Balanceado",
         "precio": 1000,
-        "stock": 8,
+        "stock": 18,
         "img": "./images/dogchowcachorro.png",
         "id": 10
     },
