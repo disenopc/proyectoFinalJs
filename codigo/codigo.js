@@ -153,7 +153,6 @@ function tablaDelCarrito(productoNuevo) {
             <i class='bx bx-trash cart-remove' id ="btnEliminar${productoNuevo.id}"></i>
             </div> 
             <button class="finCompra"><a>Finalizar Compra</a></button>
-              
             `;
 
         }),
@@ -163,6 +162,7 @@ function tablaDelCarrito(productoNuevo) {
 
             });
         });
+
     //SUMAR CANTIDAD
     carritoDeCompras.forEach(productoNuevo => {
         document.getElementById(`btnResta${productoNuevo.id}`).addEventListener("click", function() {
@@ -187,12 +187,12 @@ function tablaDelCarrito(productoNuevo) {
     btnBorrarCarrito.addEventListener("click", () => {
         Swal.fire({
             title: 'Estás seguro que deseas eliminar el carrito?',
-            text: "No podrás recuperarlo!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#E8D637',
             cancelButtonColor: 'black',
-            confirmButtonText: 'Si, eliminar carrito!'
+            confirmButtonText: 'Si, eliminar carrito!',
+            cancelButtonText: 'No, volver atrás'
         }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire({
@@ -212,6 +212,17 @@ function tablaDelCarrito(productoNuevo) {
     sumaCarrito.innerHTML = "$" + sumarProductos;
     totalF.appendChild(sumaCarrito);
 
+    //EVENTO BOTON FINALIZAR COMPRA
+    let finDeLaCompra = document.querySelector(".finCompra");
+    finDeLaCompra.addEventListener("click", () => {
+        Swal.fire({
+            title: "Gracias por tu compra!",
+            text: "Tu pedido nro: " + Date.now() + " se está preparando. Hasta la próxima.",
+            confirmButtonColor: '#E8D637'
+        });
+        borrar();
+
+    })
 
     //RESTA CANTIDADES
     const restar = (productoNuevo) => {
@@ -263,16 +274,3 @@ closeCart.onclick = () => {
     cart.classList.remove("activo");
     cart.classList.add("oculto");
 };
-
-
-//EVENTO BOTON FINALIZAR COMPRA
-let finDeLaCompra = document.querySelector(".finCompra");
-finDeLaCompra.addEventListener("click", () => {
-    Swal.fire({
-        title: "Gracias por tu compra!",
-        text: "Tu pedido nro: " + Date.now() + " se está preparando. Hasta la próxima.",
-        confirmButtonColor: '#E8D637'
-    });
-    borrar(carritoDeCompras);
-
-})

@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./bootstrap-5.2.0-beta1-dist/bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="./bootstrap-5.2.0-beta1-dist/bootstrap-5.2.0-beta1-dist/js/bootstrap.js">
+    <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/bootstrap-5.2.0-beta1-dist/js/bootstrap.js">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <title>Proyecto Final Js</title>
 </head>
@@ -53,7 +53,21 @@
         </div>
         <div id="botonEliminar"></div>
 
+
+        <!--Medio de envio-->
+
+        <div class="EnvioADomicilio">
+            <p><i class='bx bxs-truck'></i>Envio a domicilio</p>
+            <input class="form-check-input envioAdomicilio" type="radio" name="flexRadioDefault" id="flexRadioDefault2"> Andreani-Envio a domicilio
+        </div>
+        <div class="PuntoDeRetiro">
+            <p><i class='bx bx-store'></i>Punto de retiro</p>
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"> Retiro en sucursar de Andreani <br> Consultá tu sucursal más cercana.
+            <select class="form-select" aria-label="Default select example" id="sucursales" style="width: 50%;"></select>
+
+        </div>
     </div>
+
     <!--Suscripcion a Newsletter-->
     <footer id="newsletter">
         <div class="container pb-3 pt-3" style="width: 100;">

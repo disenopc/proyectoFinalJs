@@ -8,7 +8,7 @@ function obtenerJSON() {
             sucursales.forEach(enviosS => {
                 document.querySelector("#sucursales").innerHTML += `
                 <tr>
-                <option>${enviosS.direccion.calle},${enviosS.direccion.numero},${enviosS.direccion.localidad}</option>
+                <option>${enviosS.direccion.provincia},${enviosS.direccion.localidad},${enviosS.direccion.calle},${enviosS.direccion.numero}</option>
                 </tr>
                 `;
             })
@@ -16,8 +16,3 @@ function obtenerJSON() {
 
 }
 obtenerJSON();
-
-// window.onload = () => {
-//     let ubicacion = document.querySelector("ubicacionAndreani");
-//     ubicacion.addEventListener('click', )
-// }
