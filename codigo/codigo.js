@@ -97,17 +97,16 @@ let mail = document.querySelector(".email");
 
 function ingresarUnEmailValido(e) {
     if ((e.which == 13 || e.keycode == 13 && mail == "")) {
-        Swal({
+        Swal.fire({
             type: 'error',
             text: 'Ingrese un email válido y luego presione enviar',
-            timer: 3000
+            timer: 6000,
         })
     }
 };
 
 //SIMULADOR DE CARRITO 
 let carritoDeCompras = JSON.parse(localStorage.getItem('carrito')) || [];
-
 
 function agregarAlCarrito(productoNuevo) {
     const findCarrito = carritoDeCompras.find(e => e.id === productoNuevo.id)
@@ -132,7 +131,6 @@ function agregarAlCarrito(productoNuevo) {
     tablaDelCarrito();
 };
 
-
 //AGREGAR LOS PRODUCTOS AL DOM
 function tablaDelCarrito(productoNuevo) {
     const tabla = document.getElementById("cuerpoTabla");
@@ -149,6 +147,8 @@ function tablaDelCarrito(productoNuevo) {
                 </div>
             <i class='bx bx-trash cart-remove' id ="btnEliminar${productoNuevo.id}"></i>
             </div> 
+            <button class="finCompra"><a>Finalizar Compra</a></button>
+              
             `;
 
         }),
@@ -244,11 +244,11 @@ tablaDelCarrito();
 
 //BOTONES DE ABRIR Y CERRAR EL CARRO
 let closeCart = document.querySelector("#cerrarCarro");
-let cartIcon = document.querySelector("#cart-icon");
+let cartIcono = document.querySelector("#cart-icon");
 let cart = document.querySelector(".cart");
 
 
-cartIcon.onclick = () => {
+cartIcono.onclick = () => {
     cart.classList.add("activo");
     cart.classList.remove("oculto");
 
@@ -264,8 +264,10 @@ closeCart.onclick = () => {
 let finDeLaCompra = document.querySelector(".finCompra");
 finDeLaCompra.addEventListener("click", () => {
     Swal.fire({
-        text: "Gracias por tu compra, estamos preparando tu pedido",
+        title: "Gracias por tu compra!",
+        text: "Tu pedido nro: " + Date.now() + " se está preparando. Hasta la próxima.",
         confirmButtonColor: '#E8D637'
     });
     borrar(carritoDeCompras);
+
 })
