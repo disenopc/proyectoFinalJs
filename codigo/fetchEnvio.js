@@ -16,3 +16,8 @@ function obtenerJSON() {
 
 }
 obtenerJSON();
+
+// window.onload = () => {
+//     let ubicacion = document.querySelector("ubicacionAndreani");
+//     ubicacion.addEventListener('click', )
+// }

@@ -67,7 +67,12 @@ const botonEnviar = (e) => {
 
 };
 
-//VALIDA FORM EMAIL
+class Suscriptor {
+    constructor(email, id) {
+        this.email = email;
+        this.id = id;
+    }
+};
 
 
 const createNewSuscriptor = (email) => {
