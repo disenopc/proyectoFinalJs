@@ -1,201 +1,218 @@
-        body {
-            font-family: 'Source Serif 4', serif;
-        }
-        /*CSS para barra nav*/
-        
-        .logoCuervo img {
-            width: 100px;
-            margin-top: 50px;
-            margin-left: 20px;
-        }
-        
-        #botonUno,
-        #botonDos {
-            color: #E8D637;
-        }
-        
-        nav {
-            z-index: 100;
-        }
-        
-        #menu,
-        #menuForm {
-            height: 70px;
-        }
-        /*CSS para pagina tienda*/
-        
-        .cuadrosP {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 10px;
-        }
-        
-        .dark {
-            background-color: black;
-            color: black;
-        }
-        
-        .swal2-popup {
-            font-size: 15px;
-            font-family: serif;
-            color: black;
-            width: 300px;
-            position: bottom;
-        }
-        
-        #cart-icon {
-            font-size: 1.8rem;
-            cursor: pointer;
-            background-color: black;
-            color: #E8D637;
-        }
-        
-        .item-title {
-            text-transform: uppercase;
-            font-size: 1.1rem;
-        }
-        
-        .add-cart {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            padding: 5px;
-            cursor: pointer;
-            background-color: black;
-            color: #E8D637;
-        }
-        
-        .cart {
-            position: fixed;
-            top: 0;
-            right: 0;
-            padding: 20px;
-            min-height: 100vh;
-            background-color: #E8D637;
-            box-shadow: -2px 0 4px #E8D637;
-            transition: .3s;
-        }
-        
-        .cart.activo {
-            width: 360px;
-        }
-        
-        .cart.oculto {
-            width: 0%;
-        }
-        
-        .cart-title {
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-top: 1.5rem;
-        }
-        
-        .cartBox {
-            display: grid;
-            grid-template-columns: 18% 50% 32%;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .detail-box {
-            display: grid;
-            row-gap: 0.5rem;
-        }
-        
-        .cart-prod-title {
-            font-size: 1rem;
-            text-transform: uppercase;
-        }
-        
-        .cart-price {
-            font-weight: 400;
-        }
-        
-        .cart-quantity {
-            border: 1px solid black;
-            outline-color: black;
-            width: 2.4rem;
-            text-align: center;
-            font-size: 1rem;
-        }
-        
-        .cart-remove {
-            font-size: 24px;
-            color: black;
-            cursor: pointer;
-            border: #E8D637;
-            padding: 0;
-        }
-        
-        .total {
-            margin-top: 1.5rem;
-            border-top: 1px solid black;
-        }
-        
-        .total-title {
-            font-size: 1rem;
-            font-weight: 600;
-        }
-        
-        #totalPrice {
-            font-size: 15px;
-            font-weight: 600;
-        }
-        
-        .close-cart {
-            top: 8rem;
-            right: 0.8rem;
-            font-size: 2rem;
-            color: black;
-            cursor: pointer;
-        }
-        
-        .botonMenos,
-        .botonMas {
-            background-color: black;
-            color: white;
-            border-radius: 10px;
-            margin: 0;
-        }
-        
-        .botonMenos {
-            padding-left: 8.5px;
-            padding-right: 8.5px;
-            padding-top: 1px;
-            padding-bottom: 1.5px;
-        }
-        
-        .botonBorrarCarro {
-            padding: 5px;
-            cursor: pointer;
-            color: black;
-        }
-        
-        .finCompra {
-            text-decoration: none;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            padding: 5px;
-            cursor: pointer;
-            background-color: black;
-            color: #E8D637;
-        }
-        
-        .finCompra:hover {
-            color: #E8D637;
-        }
-        /*CSS para barra copyright*/
-        
-        .copy {
-            background-color: gray;
-            color: #E8D637;
-            margin: 0;
-            padding-top: 8px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            font-weight: bold;
-        }
+body {
+    font-family: 'Source Serif 4', serif;
+}
+
+
+/*CSS para barra nav*/
+
+.logoCuervo img {
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#botonUno,
+#botonDos {
+    color: #E8D637;
+}
+
+nav {
+    z-index: 100;
+}
+
+#menu,
+#menuForm {
+    height: 70px;
+}
+
+.dark {
+    background-color: black;
+    color: black;
+}
+
+.swal2-popup {
+    font-size: 15px;
+    font-family: serif;
+    color: black;
+    width: 300px;
+    position: bottom;
+}
+
+.cart,
+.cartBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #E8D637;
+    margin-left: 10px;
+}
+
+.envioADomicilio {
+    width: 100%;
+}
+
+.finCompra {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: black;
+    color: #E8D637;
+}
+
+.total-title {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+/*CSS para barra copyright*/
+
+.copy {
+    background-color: gray;
+    color: #E8D637;
+    margin: 0;
+    padding-top: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: bold;
+}
+
+@media (min-width: 1024px) {
+    .logoCuervo img {
+        width: 100px;
+        margin-top: 50px;
+        margin-left: 20px;
+    }
+    #menu,
+    #menuForm {
+        height: 70px;
+    }
+    /*CSS para pagina tienda*/
+    .cuadrosP {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+    }
+    #cart-icon {
+        font-size: 1.8rem;
+        cursor: pointer;
+        background-color: black;
+        color: #E8D637;
+    }
+    .item-title {
+        text-transform: uppercase;
+        font-size: 1.1rem;
+    }
+    .add-cart {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 5px;
+        cursor: pointer;
+        background-color: black;
+        color: #E8D637;
+    }
+    .cart {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 20px;
+        min-height: 100vh;
+        background-color: #E8D637;
+        box-shadow: -2px 0 4px #E8D637;
+        transition: .3s;
+    }
+    .cart.activo {
+        width: 360px;
+    }
+    .cart.oculto {
+        width: 0%;
+    }
+    .cart-title {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 1.5rem;
+    }
+    .cartBox {
+        display: grid;
+        grid-template-columns: 18% 50% 32%;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    .detail-box {
+        display: grid;
+        row-gap: 0.5rem;
+    }
+    .cart-prod-title {
+        font-size: 1rem;
+        text-transform: uppercase;
+    }
+    .cart-price {
+        font-weight: 400;
+    }
+    .cart-quantity {
+        border: 1px solid black;
+        outline-color: black;
+        width: 2.4rem;
+        text-align: center;
+        font-size: 1rem;
+    }
+    .cart-remove {
+        font-size: 24px;
+        color: black;
+        cursor: pointer;
+        border: #E8D637;
+        padding: 0;
+    }
+    .total {
+        margin-top: 1.5rem;
+        border-top: 1px solid black;
+    }
+    #totalPrice {
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .close-cart {
+        top: 8rem;
+        right: 0.8rem;
+        font-size: 2rem;
+        color: black;
+        cursor: pointer;
+    }
+    .botonMenos,
+    .botonMas {
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        margin: 0;
+    }
+    .botonMenos {
+        padding-left: 8.5px;
+        padding-right: 8.5px;
+        padding-top: 1px;
+        padding-bottom: 1.5px;
+    }
+    .botonBorrarCarro {
+        padding: 5px;
+        cursor: pointer;
+        color: black;
+    }
+    .finCompra {
+        text-decoration: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 5px;
+        cursor: pointer;
+        background-color: black;
+        color: #E8D637;
+    }
+    .finCompra:hover {
+        color: #E8D637;
+    }
+}
