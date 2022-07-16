@@ -1,4 +1,6 @@
-function obtenerJSON() {
+let sucursales
+
+function envioJSON() {
     const URLGET = "https://apisqa.andreani.com/v2/sucursales";
     fetch(URLGET)
         .then(resultado => resultado.json())
@@ -12,7 +14,8 @@ function obtenerJSON() {
                 </tr>
                 `;
             })
+
         })
 
 }
-obtenerJSON();
+envioJSON();

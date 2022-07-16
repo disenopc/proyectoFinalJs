@@ -3,7 +3,7 @@ let productoA = [];
 let productoL;
 
 //RENDERIZAR PRODUCTOS
-function productosRenderizados() {
+function renderPro() {
     const card = document.getElementById("cardDinamica");
     for (let array of productoA) {
         const productoL = document.createElement("div");
@@ -27,14 +27,14 @@ function productosRenderizados() {
 
 }
 //TOMAR PRODUCTOS DEL JSON
-async function obtenerJSON() {
+async function productosJSON() {
     const URLJSON = "/productos.json";
     const resp = await fetch("productos.json");
     const data = await resp.json();
     productoA = data;
-    productosRenderizados();
+    renderPro();
 }
-obtenerJSON();
+productosJSON();
 
 //INTERACCION CON EL DOM
 let textoBotonUno = document.getElementById("botonUno");
@@ -64,7 +64,13 @@ const botonEnviar = (e) => {
         email
     });
     console.log(listasuscriptores);
+    Swal.fire({
+        title: 'Gracias por suscribirte',
+        showCancelButton: false,
+        confirmButtonColor: '#E8D637',
+        cancelButtonColor: 'black',
 
+    });
 };
 
 class Suscriptor {
@@ -98,14 +104,11 @@ const listasuscriptores = new Suscriptores();
 
 //VALIDA FORM TECLA ENTER
 
-let mail = document.querySelector(".email");
-
-function ingresarUnEmailValido(e) {
-    if ((e.which == 13 || e.keycode == 13 && mail == "")) {
+function ingresarUnEmailValido(event) {
+    if (e.which == 13 || e.keycode == 13) {
         Swal.fire({
             type: 'error',
-            text: 'Ingrese un email válido y luego presione enviar',
-            timer: 6000,
+            text: 'Ingrese un email válido y luego presione enviar'
         })
     }
 };
@@ -152,6 +155,7 @@ function tablaDelCarrito(productoNuevo) {
                 </div>
             <i class='bx bx-trash cart-remove' id ="btnEliminar${productoNuevo.id}"></i>
             </div> 
+            
             <button class="finCompra"><a>Finalizar Compra</a></button>
             `;
 
@@ -176,14 +180,29 @@ function tablaDelCarrito(productoNuevo) {
         });
     });
 
+    const totalF = document.getElementById("totalPrice");
+    totalF.innerHTML = "";
+    const sumaCarrito = document.createElement("div");
+    const sumarProductos = carritoDeCompras.map(productoNuevo => productoNuevo.precio * productoNuevo.cantidad).reduce((prev, curr) => prev + curr, 0);
+    sumaCarrito.innerHTML = "$" + sumarProductos;
+    totalF.appendChild(sumaCarrito);
 
+    //EVENTO BOTON FINALIZAR COMPRA
+    let finDeLaCompra = document.querySelector(".finCompra");
+    finDeLaCompra.addEventListener("click", () => {
+        Swal.fire({
+            title: "Gracias por tu compra!",
+            text: "Tu pedido nro: " + Date.now() + " se está preparando. Ante cualquier duda/consulta escribinos por instagram @elcuervopetshop. Hasta la próxima.",
+            confirmButtonColor: '#E8D637'
+        });
+        borrar();
+
+    });
     //BORRAR EL TOTAL DEL CARRITO
     const borrarCarrito = document.createElement("div");
     cuerpoTabla.appendChild(borrarCarrito);
-    borrarCarrito.innerHTML = `<button id="btnBorrarCarrito" class="botonBorrarCarro btn btn-dark"> Borrar carrito </button>`
+    borrarCarrito.innerHTML = ` <button id="btnBorrarCarrito" class="botonBorrarCarro btn btn-dark"> Borrar carrito </button>`
     const btnBorrarCarrito = document.getElementById("btnBorrarCarrito");
-
-
     btnBorrarCarrito.addEventListener("click", () => {
         Swal.fire({
             title: 'Estás seguro que deseas eliminar el carrito?',
@@ -204,25 +223,6 @@ function tablaDelCarrito(productoNuevo) {
         })
 
     });
-
-    const totalF = document.getElementById("totalPrice");
-    totalF.innerHTML = "";
-    const sumaCarrito = document.createElement("div");
-    const sumarProductos = carritoDeCompras.map(productoNuevo => productoNuevo.precio * productoNuevo.cantidad).reduce((prev, curr) => prev + curr, 0);
-    sumaCarrito.innerHTML = "$" + sumarProductos;
-    totalF.appendChild(sumaCarrito);
-
-    //EVENTO BOTON FINALIZAR COMPRA
-    let finDeLaCompra = document.querySelector(".finCompra");
-    finDeLaCompra.addEventListener("click", () => {
-        Swal.fire({
-            title: "Gracias por tu compra!",
-            text: "Tu pedido nro: " + Date.now() + " se está preparando. Hasta la próxima.",
-            confirmButtonColor: '#E8D637'
-        });
-        borrar();
-
-    })
 
     //RESTA CANTIDADES
     const restar = (productoNuevo) => {
