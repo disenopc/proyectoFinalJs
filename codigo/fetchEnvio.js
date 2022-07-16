@@ -5,7 +5,7 @@ function envioJSON() {
     fetch(URLGET)
         .then(resultado => resultado.json())
         .then(data => {
-            let sucursales = data;
+            sucursales = data;
             console.log(sucursales);
             sucursales.forEach(enviosS => {
                 document.querySelector("#sucursales").innerHTML += `
