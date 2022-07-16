@@ -79,21 +79,6 @@ nav {
     color: black;
 }
 
-.finCompra {
-    text-decoration: none;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 5px;
-    cursor: pointer;
-    background-color: black;
-    color: #E8D637;
-}
-
-.finCompra:hover {
-    color: #E8D637;
-}
-
 
 /*CSS para barra copyright*/
 
@@ -218,5 +203,18 @@ nav {
         padding-right: 8.5px;
         padding-top: 1px;
         padding-bottom: 1.5px;
+    }
+    .finCompra {
+        text-decoration: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 5px;
+        cursor: pointer;
+        background-color: black;
+        color: #E8D637;
+    }
+    .finCompra:hover {
+        color: #E8D637;
     }
 }
